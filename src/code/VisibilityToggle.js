@@ -1,28 +1,32 @@
 import React, { Component } from "react";
-import Count from "./count";
-let visibility = false;
+
 export default class VisibilityToggle extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.toggleVisibility = this.toggleVisibility.bind(this);
+    this.state = {
+      visibility: false,
+    };
   }
 
-  toggleVisibility = () => {
-    visibility = !visibility;
-
-    this.forceUpdate();
-  };
+  toggleVisibility() {
+    this.setState((prevState) => {
+      return {
+        visibility: !prevState.visibility,
+      };
+    });
+  }
 
   render() {
     return (
       <div>
         <h1> Visibility Toggle </h1>
         <button onClick={this.toggleVisibility}>
-          {visibility ? "Hide options" : "show options"}
+          {this.state.visibility ? "Hide options" : "show options"}
         </button>
-        {visibility && (
+        {this.state.visibility && (
           <div>
-            <Count />
+            <p>your hidden text is now visible</p>
           </div>
         )}
       </div>
