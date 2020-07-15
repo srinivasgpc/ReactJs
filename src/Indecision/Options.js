@@ -1,20 +1,13 @@
 import React, { Component } from "react";
 
 export default class Options extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleRemoveAll = this.handleRemoveAll.bind(this);
-  }
-  handleRemoveAll() {
-    alert(this.props.options);
-  }
   render() {
     return (
       <div className="App">
+        <button onClick={this.props.handleDeleteOptions}>Remove all</button>
         {this.props.options.map((option) => (
           <Option key={option} optionText={option} />
         ))}
-        <button onClick={this.handleRemoveAll}>Remove all</button>
       </div>
     );
   }
