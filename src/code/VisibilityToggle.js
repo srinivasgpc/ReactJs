@@ -6,6 +6,7 @@ export default class VisibilityToggle extends Component {
     super(props);
     this.state = {};
   }
+
   toggleVisibility = () => {
     visibility = !visibility;
 
