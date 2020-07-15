@@ -1,13 +1,20 @@
 import React, { Component } from "react";
-import Todo from "./code/Todo.js";
-import VisibilityToggle from "./code/VisibilityToggle.js";
 import "./App.css";
-
-class App extends Component {
+import Header from "./Indecision/Header";
+import Action from "./Indecision/Action";
+import Options from "./Indecision/Options";
+import AddOption from "./Indecision/AddOption";
+class App extends React.Component {
   render() {
+    const title = "Indecision";
+    const subtitle = "Put your life in the hands of a computer";
+    const options = ["thing one ", " thing two", "thisng three"];
     return (
       <div className="App-header">
-        <VisibilityToggle />
+        <Header title={title} subtitle={subtitle} />
+        <Action />
+        <Options options={options} />
+        <AddOption />
       </div>
     );
   }
