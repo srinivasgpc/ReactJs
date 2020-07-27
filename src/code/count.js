@@ -4,7 +4,7 @@ class Count extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
+      count: props.count,
     };
   }
 
@@ -24,6 +24,7 @@ class Count extends Component {
       count: 0,
     });
   };
+
   render() {
     return (
       <div className="App-header">
@@ -35,5 +36,7 @@ class Count extends Component {
     );
   }
 }
-
+Count.defaultProps = {
+  count: 2,
+};
 export default Count;

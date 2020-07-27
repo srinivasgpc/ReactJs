@@ -12,8 +12,6 @@ export default class Options extends React.Component {
     );
   }
 }
-class Option extends React.Component {
-  render() {
-    return <div>{this.props.optionText}</div>;
-  }
-}
+const Option = (props) => {
+  return <div>{props.optionText}</div>;
+};
