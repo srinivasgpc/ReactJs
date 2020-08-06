@@ -3,7 +3,6 @@ import "./App.css";
 //import Header from "./Indecision/Header";
 //import Action from "./Indecision/Action";
 //import Options from "./Indecision/Options";
-
 import AddOption from "./Indecision/AddOption";
 class IndecisionApp extends React.Component {
   constructor(props) {
@@ -15,6 +14,9 @@ class IndecisionApp extends React.Component {
     this.state = {
       options: props.options,
     };
+  }
+  componentDidMount() {
+    console.log("componentDidMount!!");
   }
   handleDeleteOptions = () => {
     this.setState({ options: [] });
